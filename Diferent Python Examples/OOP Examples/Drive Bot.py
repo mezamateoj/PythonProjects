@@ -20,29 +20,7 @@ class DriveBot:
     def adjust_sensor(self, new_sensor):
         self.sensor_range = new_sensor
 
-
+# Instance of DriveBot
 robot_1 = DriveBot()
-
 robot_1.control_bot(10, 180)
 robot_1.adjust_sensor(20)
-
-# print(robot_1.motor_speed)
-# print(robot_1.direction)
-# print(robot_1.sensor_range)
-
-# Create robot_2 here!
-robot_2 = DriveBot(35, 75, 25)
-# print('Robot 2 attributes:')
-# print(robot_2.motor_speed)
-# print(robot_2.direction)
-# print(robot_2.sensor_range)
-
-robot_3 = DriveBot(20, 60, 10)
-
-DriveBot.latitude = -50.0
-DriveBot.longitude = 50.0
-DriveBot.all_disabled = True
-
-print(robot_1.id)
-print(robot_2.id)
-print(robot_3.id)

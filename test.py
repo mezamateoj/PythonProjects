@@ -1,20 +1,16 @@
+import pandas as pd
+import numpy as np
 
+df = pd.DataFrame([('bird', 389.0),
+                   ('bird', 24.0),
+                   ('mammal', 80.5),
+                   ('mammal', np.nan),
+                   ('mammal', 10)],
+                  
+                  columns=('class', 'max_speed'))
 
-
-d = [0.18, 0.18, 0.15, 0.06]
-
-
-sums = []
-new_div = 1.15 * (1 + d[0])
-sums.append(new_div)
-for i in d[1:]:
-    growth = sums[-1] * (1 + i)
-    sums.append(growth)
-
-print(sums)
-print(sums[-1])
-
-ls = [1, 2, 3, 4]
-ls.remove(2)
-print(ls)
-print(list(range(10, 1, -1)))
+df.rename(index={0: 'row', 1: 'row2', 2: 'row3', 3: 'row4', 4: 'row5'})
+#df.set_index(['row', 'row2', 'row3', 'row4', 'row5'], inplace=True)                
+#df.index = ['row', 'row2', 'row3', 'row4']
+#df.set_index(['1', '2', '3', '4'], inplace=True)
+print(df)
