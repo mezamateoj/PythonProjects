@@ -25,6 +25,4 @@ user.get()
 user.grid(column=3, row=2)
 
 
-
-
 window.mainloop()
