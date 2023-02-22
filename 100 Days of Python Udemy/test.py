@@ -1,3 +1,5 @@
+import time
+import datetime
 # def add(*args):
 #     arguments_list = [x for x in args]
 #     return sum(arguments_list)
@@ -9,11 +11,20 @@
 
 # new_car = Model(make='Nissan')
 # print(new_car.model) 
-from tkinter import *
-from tkinter import ttk
-root = Tk()
-frm = ttk.Frame(root, padding=10)
-frm.grid()
-ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
-ttk.Button(frm, text="Quit", command=root.destroy).grid(column=0, row=1)
-root.mainloop()
+def timer():
+    total_seconds = 5 * 60 + 0
+    while total_seconds > 0:
+        # Timer represents time left on countdown
+        timer = datetime.timedelta(seconds = total_seconds)
+        print(timer)
+        # Prints the time left on the timer
+        # self.time.append(timer)
+        # print(timer, end="\r")
+        # Delays the program one second
+
+        time.sleep(1)
+        # Reduces total time by one second
+        total_seconds -= 1
+        
+print(timer())
+
