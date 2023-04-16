@@ -1,7 +1,6 @@
-import datetime
 import tkinter as tk
 import os
-import time
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
