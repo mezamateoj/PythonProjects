@@ -62,9 +62,9 @@ class Pomodoro():
 
     def start_timer(self):
         self.timer_running = True
-        self.start_button #.config(state="disabled")
+        self.start_button.config(state="disabled")
         self.stop_button.config(state="normal")
-        self.reset_button #.config(state="disabled")
+        self.reset_button.config(state="disabled")
         self.update_timer()
 
     def stop_timer(self):
