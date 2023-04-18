@@ -2,7 +2,6 @@
 import tkinter as tk
 from tkinter import messagebox
 import os
-import sys
 from generator import password
 import json
 
@@ -34,6 +33,9 @@ class PasswordManager():
         self.website_entry = tk.Entry(self.root, width=35)
         self.website_entry.grid(row=1, column=1)
         self.website_entry.focus()
+
+        self.search_button = tk.Button(self.root, text='Search', width=14, command=self.search_data)
+        self.search_button.grid(row=1, column=2)
 
     def email(self):
         self.email_label = tk.Label(self.root, text='Email/Username: ')
@@ -104,6 +106,22 @@ class PasswordManager():
         # self.email_entry.delete(0, 'end')
         self.password_entry.delete(0, tk.END)
         self.website_entry.delete(0, tk.END)
+
+    def search_data(self):
+        website = self.website_entry.get()
+        try:
+            with open(r'C:\Users\mezam\Desktop\password_data.json', 'r') as data_file:
+                # read old data
+                data = json.load(data_file)
+        except FileNotFoundError:
+            messagebox.showinfo(title='Error', message='No Data File Found')
+        else:
+            if website in data:
+                email = data[website]['email']
+                password = data[website]['password']
+                messagebox.showinfo(title=website, message=f'Email: {email} \nPassword: {password}')
+            else:
+                messagebox.showinfo(title='Error', message=f'No details for {website} exists')
 
 
 
